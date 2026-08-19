@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PS4 Iraq | ألعاب بلايستيشن 4</title>
+<meta name="description" content="دليل ألعاب PS4 بالعربي: بحث، تقييمات، قصص وتريلرات.">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Tahoma,sans-serif;background:#080b12;color:#f4f6fb}
+.hero{min-height:430px;padding:28px 7%;background:radial-gradient(circle at 75% 25%,#263b68,transparent 35%),linear-gradient(135deg,#0b1020,#090b11)}
+nav{display:flex;justify-content:space-between;align-items:center;gap:20px}.logo{font-size:27px;font-weight:900;color:#62a8ff}
+.badge{padding:8px 13px;border:1px solid #2b3a55;border-radius:999px;color:#aab9d4}
+.heroContent{max-width:760px;margin-top:85px}.hero h1{font-size:clamp(38px,7vw,72px);margin:0 0 15px}
+.hero p{font-size:18px;color:#b9c2d3;line-height:1.8}.search{display:flex;gap:10px;margin-top:28px}
+.search input{flex:1;padding:17px 20px;border-radius:14px;border:1px solid #2c3850;background:#111827;color:white;font-size:16px}
+.search button{border:0;border-radius:14px;padding:0 25px;background:#3985ff;color:#fff;font-weight:bold;cursor:pointer}
+.wrap{padding:45px 7%;max-width:1400px;margin:auto}.top{display:flex;justify-content:space-between;align-items:center;gap:15px}
+.top h2{font-size:30px}.count{color:#8290a8}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:22px}
+.card{background:#101520;border:1px solid #1d2738;border-radius:18px;overflow:hidden;transition:.2s;cursor:pointer}.card:hover{transform:translateY(-5px);border-color:#3985ff}
+.poster{width:100%;aspect-ratio:2/3;object-fit:cover;background:#182234}.info{padding:16px}.title{font-size:18px;font-weight:bold}
+.meta{display:flex;justify-content:space-between;margin-top:10px;color:#9ba8bd;font-size:14px}.rating{color:#ffd15c}.empty{text-align:center;padding:60px;color:#8995aa}
+.modal{position:fixed;inset:0;background:#000b;display:none;align-items:center;justify-content:center;padding:20px;z-index:5}.modal.show{display:flex}
+.box{max-width:850px;width:100%;max-height:90vh;overflow:auto;background:#101520;border:1px solid #29364d;border-radius:22px;padding:24px}
+.close{float:left;border:0;background:#222d40;color:white;border-radius:10px;padding:8px 13px;cursor:pointer}
+.box img{width:180px;border-radius:14px;float:right;margin-left:20px}.box h2{font-size:32px}.box p{line-height:1.9;color:#c2cbd9}
+.trailer{display:block;margin-top:18px;padding:13px;text-align:center;background:#e52f4f;border-radius:12px;font-weight:bold;color:white;text-decoration:none}
+.footer{text-align:center;padding:40px;color:#65728a;border-top:1px solid #151d2b}
+@media(max-width:600px){.heroContent{margin-top:55px}.search button{padding:0 15px}.grid{grid-template-columns:repeat(2,1fr);gap:12px}.info{padding:11px}.box img{float:none;width:130px}.box h2{font-size:25px}}
+</style></head>
+<body>
+<section class="hero"><nav><div class="logo">🎮 PS4 IRAQ</div><div class="badge">دليل ألعاب PS4</div></nav>
+<div class="heroContent"><h1>اكتشف لعبتك القادمة</h1><p>ابحث في مكتبة ألعاب PS4 واستكشف التقييم، النوع، القصة والتريلر في واجهة عربية سريعة.</p>
+<div class="search"><input id="search" placeholder="ابحث عن لعبة مثل God of War..." autocomplete="off"><button onclick="render()">بحث</button></div></div></section>
+<main class="wrap"><div class="top"><h2>🔥 أشهر الألعاب</h2><span class="count" id="count"></span></div><div class="grid" id="grid"></div></main>
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()"><div class="box"><button class="close" onclick="closeModal()">إغلاق</button>
+<img id="mimg"><h2 id="mtitle"></h2><div id="mmeta"></div><p id="mdesc"></p><a id="mtrailer" class="trailer" target="_blank">▶ مشاهدة التريلر</a></div></div>
+<footer class="footer">PS4 Iraq © 2026 — مشروع ألعاب عربي</footer>
+<script>
+const games=[
+['God of War','2018','9.8','أكشن، مغامرات','https://images.igdb.com/igdb/image/upload/t_cover_big/co1tmu.jpg','رحلة كريتوس وابنه أتريوس في عالم الأساطير الإسكندنافية، مليئة بالمعارك والاستكشاف والقصة السينمائية.','https://www.youtube.com/results?search_query=God+of+War+PS4+trailer'],
+['The Last of Us Part II','2020','9.6','أكشن، قصة','https://images.igdb.com/igdb/image/upload/t_cover_big/co1x7d.jpg','تجربة قصصية درامية تتبع إيلي في عالم قاسٍ بعد سنوات من أحداث الجزء الأول.','https://www.youtube.com/results?search_query=The+Last+of+Us+Part+II+trailer'],
+['Red Dead Redemption 2','2018','9.7','عالم مفتوح','https://images.igdb.com/igdb/image/upload/t_cover_big/co1q1f.jpg','عش حياة آرثر مورغان وعصابة فان دير ليند في واحدة من أضخم مغامرات العالم المفتوح.','https://www.youtube.com/results?search_query=Red+Dead+Redemption+2+trailer'],
+['Ghost of Tsushima','2020','9.5','أكشن، عالم مفتوح','https://images.igdb.com/igdb/image/upload/t_cover_big/co2g2v.jpg','قاتل من أجل جزيرة تسوشيما في مغامرة ساموراي سينمائية مليئة بالاستكشاف والقتال.','https://www.youtube.com/results?search_query=Ghost+of+Tsushima+trailer'],
+['Spider-Man','2018','9.3','أكشن','https://images.igdb.com/igdb/image/upload/t_cover_big/co1r7u.jpg','تجول في نيويورك بشخصية سبايدرمان واستخدم قدراتك لإيقاف أخطر أعداء المدينة.','https://www.youtube.com/results?search_query=Marvel+Spider-Man+PS4+trailer'],
+['Uncharted 4','2016','9.4','مغامرات','https://images.igdb.com/igdb/image/upload/t_cover_big/co1rba.jpg','عودة ناثان دريك في مغامرة أخيرة مليئة بالألغاز والمطاردات والكنوز.','https://www.youtube.com/results?search_query=Uncharted+4+trailer'],
+['Horizon Zero Dawn','2017','9.2','RPG، عالم مفتوح','https://images.igdb.com/igdb/image/upload/t_cover_big/co1ni3.jpg','استكشف عالمًا مستقبليًا تسيطر عليه الآلات واكتشف أسرار ماضي ألوي.','https://www.youtube.com/results?search_query=Horizon+Zero+Dawn+trailer'],
+['Bloodborne','2015','9.4','RPG، Soulslike','https://images.igdb.com/igdb/image/upload/t_cover_big/co1r74.jpg','قاتل مخلوقات مرعبة في مدينة يارنام الغامضة واكشف أسرار مرض دموي غريب.','https://www.youtube.com/results?search_query=Bloodborne+trailer'],
+['Gran Turismo Sport','2017','8.7','سباقات','https://images.igdb.com/igdb/image/upload/t_cover_big/co1w1t.jpg','سباقات واقعية ومنافسات أونلاين لعشاق السيارات والسرعة.','https://www.youtube.com/results?search_query=Gran+Turismo+Sport+trailer'],
+['Mortal Kombat 11','2019','8.9','قتال','https://images.igdb.com/igdb/image/upload/t_cover_big/co1s7b.jpg','قاتل بشخصياتك المفضلة في مواجهات عنيفة ونظام قتال عميق.','https://www.youtube.com/results?search_query=Mortal+Kombat+11+trailer']
+];
+function render(){let q=document.getElementById('search').value.trim().toLowerCase();let list=games.filter(g=>g[0].toLowerCase().includes(q)||g[3].toLowerCase().includes(q));document.getElementById('count').textContent=list.length+' لعبة';document.getElementById('grid').innerHTML=list.length?list.map(g=>`<article class="card" onclick="openGame(${games.indexOf(g)})"><img class="poster" src="${g[4]}" alt="${g[0]}" loading="lazy"><div class="info"><div class="title">${g[0]}</div><div class="meta"><span>${g[1]} · ${g[3]}</span><span class="rating">★ ${g[2]}</span></div></div></article>`).join(''):'<div class="empty">لم نجد لعبة بهذا الاسم.</div>'}
+function openGame(i){let g=games[i];mimg.src=g[4];mtitle.textContent=g[0];mmeta.innerHTML=`<p>📅 ${g[1]} &nbsp; | &nbsp; 🎮 ${g[3]} &nbsp; | &nbsp; ⭐ ${g[2]}/10</p>`;mdesc.textContent=g[5];mtrailer.href=g[6];modal.classList.add('show')}
+function closeModal(){modal.classList.remove('show')}document.getElementById('search').addEventListener('keydown',e=>{if(e.key==='Enter')render()});render();
+</script></body></html>
