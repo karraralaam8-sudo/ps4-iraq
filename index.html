@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#070b14">
+<title>PS4 Iraq — مكتبة ألعاب PS4</title>
+<style>
+:root{--bg:#070b14;--panel:#0d1422;--panel2:#111b2c;--line:#24324a;--text:#f5f7fb;--muted:#9aa8bd;--accent:#3d8bfd;--gold:#ffc857;--danger:#ff657a}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif}
+button,input,select{font:inherit}button{cursor:pointer}
+.header{position:sticky;top:0;z-index:20;background:rgba(7,11,20,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.wrap{max-width:1250px;margin:auto;padding:18px}
+.nav{display:flex;gap:14px;align-items:center;justify-content:space-between}.brand{font-weight:900;font-size:24px}.brand span{color:var(--accent)}
+.hero{padding:35px 18px 25px;max-width:1250px;margin:auto}
+.hero h1{font-size:clamp(30px,5vw,58px);margin:0 0 10px}.hero p{color:var(--muted);font-size:17px;line-height:1.8;margin:0 0 20px}
+.search{display:flex;gap:10px}.search input{flex:1;min-width:0;background:var(--panel);border:1px solid var(--line);color:#fff;border-radius:15px;padding:15px 17px;outline:none}.search input:focus{border-color:var(--accent)}
+.btn{border:1px solid var(--line);background:var(--panel);color:#fff;border-radius:13px;padding:12px 16px}.btn.primary{background:var(--accent);border-color:var(--accent);font-weight:800}
+.filters{display:flex;gap:9px;flex-wrap:wrap;margin:18px 0}.filters select{background:var(--panel);color:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 12px}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin:10px 0 24px}.stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 15px}.stat b{font-size:20px}.muted{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:15px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.2s}.card:hover{transform:translateY(-3px);border-color:#3d8bfd88}
+.cover{width:100%;aspect-ratio:3/4;object-fit:cover;background:#111827;display:block}.cardbody{padding:12px}.title{font-weight:800;line-height:1.35;min-height:44px}.meta{font-size:12px;color:var(--muted);margin-top:7px}.rating{color:var(--gold);font-weight:800;margin-top:7px}
+.card button{width:100%;margin-top:10px}
+.notice{padding:14px;border:1px dashed var(--line);border-radius:14px;color:var(--muted);line-height:1.7;margin:15px 0}
+.loading{text-align:center;padding:35px;color:var(--muted)}.error{color:#ff9aa8}
+.modal{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.72);display:none;align-items:flex-end;justify-content:center}.modal.open{display:flex}
+.dialog{background:var(--panel);border:1px solid var(--line);width:min(100%,900px);max-height:94vh;overflow:auto;border-radius:22px 22px 0 0;padding:18px}
+.close{float:left;border:0;background:#1b2638;color:#fff;border-radius:10px;padding:8px 12px}.detail{display:grid;grid-template-columns:250px 1fr;gap:20px;margin-top:15px}.detail img{width:100%;border-radius:14px}.detail h2{margin-top:0;font-size:30px}.chips{display:flex;flex-wrap:wrap;gap:7px}.chip{background:#172237;border:1px solid var(--line);border-radius:99px;padding:6px 10px;font-size:12px}.desc{line-height:1.9;color:#dbe4f1;white-space:pre-line}.video{position:relative;padding-top:56.25%;margin-top:15px}.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:14px}
+footer{border-top:1px solid var(--line);margin-top:45px;padding:25px 18px;color:var(--muted);text-align:center}
+@media(max-width:650px){.detail{grid-template-columns:1fr}.detail img{max-width:260px;margin:auto}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.cardbody{padding:10px}.hero{padding-top:25px}.search{flex-direction:column}}
+</style>
+</head>
+<body>
+<header class="header"><div class="wrap nav"><div class="brand">PS4 <span>IRAQ</span></div><div class="muted">مكتبة ألعاب بلا ويكيبيديا</div></div></header>
+
+<main>
+<section class="hero">
+<h1>🎮 مكتبة ألعاب PlayStation 4</h1>
+<p>ابحث في قاعدة بيانات ألعاب حقيقية، وافتح صفحة أي لعبة لمعرفة الغلاف والتقييم والتصنيف والمطور والناشر والوصف والفيديو إن كان متوفراً.</p>
+<div class="search"><input id="q" placeholder="اكتب اسم اللعبة: GTA V، FIFA، God of War..." autocomplete="off"><button class="btn primary" id="searchBtn">بحث</button></div>
+<div class="filters">
+<select id="sort"><option value="name">ترتيب: الاسم</option><option value="rating">الأعلى تقييماً</option><option value="date">الأحدث</option></select>
+<select id="genre"><option value="">كل الأنواع</option><option>Action</option><option>Adventure</option><option>RPG</option><option>Sports</option><option>Racing</option><option>Fighting</option><option>Shooter</option><option>Strategy</option><option>Simulation</option><option>Platform</option><option>Puzzle</option><option>Horror</option></select>
+<button class="btn" id="popular">الألعاب البارزة</button>
+</div>
+<div class="stats"><div class="stat">قاعدة البيانات: <b id="total">—</b></div><div class="stat">المعروض: <b id="shown">0</b></div><div class="stat">المصدر: <b>GameDB / IGDB</b></div></div>
+<div class="notice">ℹ️ الموقع لا يضع ألعاباً وهمية داخل القائمة. البيانات تأتي مباشرة من GameDB، وهي قاعدة بيانات ثابتة مبنية على IGDB. إذا لم توجد بيانات تفصيلية للعبة في المصدر، سيظهر ذلك بوضوح بدلاً من اختلاق معلومات.</div>
+</section>
+
+<section class="wrap">
+<div id="status" class="loading">جاري تحميل فهرس الألعاب الحقيقي…</div>
+<div id="grid" class="grid"></div>
+</section>
+</main>
+
+<div class="modal" id="modal"><div class="dialog"><button class="close" id="close">إغلاق</button><div id="detail"></div></div></div>
+<footer>PS4 Iraq © 2026 — بيانات الألعاب: GameDB / IGDB. هذا الموقع لا يستضيف ملفات ألعاب أو نسخاً غير مرخّصة.</footer>
+
+<script>
+const API='https://app.lizardbyte.dev/GameDB';
+const buckets=[...'abcdefghijklmnopqrstuvwxyz0123456789','@'];
+let index={}, cache=new Map(), loaded=false;
+
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const arr=v=>Array.isArray(v)?v:(v?[v]:[]);
+function cover(g){
+  const c=g.cover;
+  if(typeof c==='string') return c.startsWith('//')?'https:'+c:c;
+  if(c?.url) return c.url.replace('//','https://');
+  if(g.cover_url) return g.cover_url;
+  return '';
+}
+function getGenres(g){return arr(g.genres||g.genre||g.categories).map(x=>typeof x==='string'?x:(x.name||''));}
+function getRating(g){return Number(g.rating||g.aggregated_rating||0)||0}
+function getDate(g){return g.first_release_date||g.release_date||g.date||0}
+function dateText(v){if(!v)return 'غير متوفر'; let d=new Date(typeof v==='number'&&v<1e12?v*1000:v); return isNaN(d)?String(v):d.toLocaleDateString('ar-IQ',{year:'numeric',month:'long',day:'numeric'});}
+function imageFallback(e){e.target.src='data:image/svg+xml;charset=UTF-8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800"><rect width="100%" height="100%" fill="#111827"/><text x="50%" y="50%" fill="#9aa8bd" font-size="30" text-anchor="middle">PS4</text></svg>')}
+
+async function fetchJSON(url){
+  const r=await fetch(url,{cache:'force-cache'});
+  if(!r.ok) throw new Error('HTTP '+r.status);
+  return r.json();
+}
+
+async function loadIndex(){
+  if(loaded)return;
+  let done=0;
+  for(const b of buckets){
+    try{
+      const data=await fetchJSON(`${API}/buckets/${b}.json`);
+      Object.entries(data||{}).forEach(([id,v])=>{index[id]={id,name:v?.name||String(v)}});
+    }catch(e){}
+    done++;
+    $('status').textContent=`جاري بناء فهرس الألعاب… ${done}/${buckets.length}`;
+  }
+  loaded=true;
+  $('total').textContent=Object.keys(index).length.toLocaleString('ar-IQ');
+}
+
+function matches(g,q,genre){
+  const name=(g.name||'').toLowerCase(), qq=q.toLowerCase().trim();
+  if(qq && !name.includes(qq))return false;
+  if(genre && !getGenres(g).some(x=>x.toLowerCase().includes(genre.toLowerCase())))return false;
+  return true;
+}
+
+function render(list){
+  $('shown').textContent=list.length.toLocaleString('ar-IQ');
+  $('grid').innerHTML=list.map(g=>{
+    const c=cover(g);
+    return `<article class="card">
+      <img class="cover" src="${esc(c||'')}" onerror="imageFallback(event)" alt="${esc(g.name)}">
+      <div class="cardbody"><div class="title">${esc(g.name)}</div>
+      <div class="meta">${esc(dateText(getDate(g)))}</div>
+      <div class="rating">${getRating(g)?'★ '+getRating(g).toFixed(1):'التقييم غير متوفر'}</div>
+      <button class="btn" onclick="openGame('${esc(g.id)}')">التفاصيل</button></div>
+    </article>`;
+  }).join('');
+}
+
+async function details(ids){
+  const out=[];
+  for(const id of ids.slice(0,36)){
+    if(cache.has(id)){out.push(cache.get(id));continue}
+    try{
+      const g=await fetchJSON(`${API}/games/${id}.json`);
+      cache.set(id,g); out.push(g);
+    }catch(e){}
+  }
+  return out;
+}
+
+async function search(){
+  $('status').textContent='جاري البحث في الفهرس الحقيقي…';
+  const q=$('q').value, genre=$('genre').value;
+  await loadIndex();
+  let base=Object.values(index).filter(g=>(!q||g.name.toLowerCase().includes(q.toLowerCase()))).slice(0,250);
+  const full=await details(base.map(x=>x.id));
+  let list=full.filter(g=>matches(g,q,genre));
+  const s=$('sort').value;
+  list.sort((a,b)=>s==='rating'?getRating(b)-getRating(a):s==='date'?new Date(getDate(b)||0)-new Date(getDate(a)||0):String(a.name).localeCompare(String(b.name)));
+  render(list.slice(0,36));
+  $('status').textContent=list.length?'':'لا توجد نتائج. جرّب اسم لعبة آخر.';
+  if(!list.length)$('status').className='loading error';
+  else $('status').className='loading';
+}
+
+async function popular(){
+  $('q').value='';$('genre').value='';
+  $('status').textContent='جاري جلب ألعاب بارزة…';
+  await loadIndex();
+  const base=Object.values(index).slice(0,180);
+  const full=await details(base.map(x=>x.id));
+  full.sort((a,b)=>getRating(b)-getRating(a));
+  render(full.slice(0,36));
+  $('status').textContent='ألعاب بارزة من البيانات المتاحة';
+}
+
+window.openGame=async id=>{
+  $('modal').classList.add('open');
+  $('detail').innerHTML='<div class="loading">جاري تحميل تفاصيل اللعبة…</div>';
+  let g=cache.get(id);
+  if(!g){try{g=await fetchJSON(`${API}/games/${id}.json`);cache.set(id,g)}catch(e){$('detail').innerHTML='<div class="loading error">تعذر تحميل تفاصيل اللعبة.</div>';return}}
+  const genres=getGenres(g);
+  const devs=arr(g.involved_companies||g.developers).map(x=>typeof x==='string'?x:(x.company?.name||x.name||'')).filter(Boolean);
+  const pubs=arr(g.publishers).map(x=>typeof x==='string'?x:(x.name||'')).filter(Boolean);
+  const desc=g.summary||g.storyline||g.description||'لا يوجد وصف في المصدر.';
+  const vids=arr(g.videos||g.video).filter(Boolean);
+  const video=vids[0]?.video_id||vids[0]?.youtube_id||vids[0]?.id;
+  $('detail').innerHTML=`<div class="detail">
+    <div><img src="${esc(cover(g))}" onerror="imageFallback(event)" alt="${esc(g.name)}"></div>
+    <div>
+      <h2>${esc(g.name)}</h2>
+      <div class="rating">${getRating(g)?'★ '+getRating(g).toFixed(1):'التقييم غير متوفر'}</div>
+      <p class="muted">تاريخ الإصدار: ${esc(dateText(getDate(g)))}</p>
+      <div class="chips">${genres.map(x=>`<span class="chip">${esc(x)}</span>`).join('')||'<span class="chip">التصنيف غير متوفر</span>'}</div>
+      <h3>📖 القصة والوصف</h3><div class="desc">${esc(desc)}</div>
+      ${devs.length?`<h3>👨‍💻 المطورون</h3><p class="muted">${esc(devs.join('، '))}</p>`:''}
+      ${pubs.length?`<h3>🏢 الناشرون</h3><p class="muted">${esc(pubs.join('، '))}</p>`:''}
+      ${video?`<h3>🎬 فيديو</h3><div class="video"><iframe src="https://www.youtube.com/embed/${encodeURIComponent(video)}" allowfullscreen loading="lazy"></iframe></div>`:''}
+    </div></div>`;
+};
+
+$('searchBtn').onclick=search;
+$('q').addEventListener('keydown',e=>{if(e.key==='Enter')search()});
+$('sort').onchange=search;$('genre').onchange=search;$('popular').onclick=popular;
+$('close').onclick=()=>$('modal').classList.remove('open');
+$('modal').onclick=e=>{if(e.target.id==='modal')$('modal').classList.remove('open')};
+
+(async()=>{await loadIndex(); await search()})();
+</script>
+</body>
+</html>
