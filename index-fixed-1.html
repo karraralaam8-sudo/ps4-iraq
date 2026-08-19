@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PS4 Iraq — مكتبة ألعاب PlayStation 4</title>
+<meta name="description" content="مكتبة ألعاب PS4 حقيقية مع بحث وبوسترات وأسعار وروابط المتجر وشرح عربي.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://karraralaam8-sudo.github.io/ps4-iraq/">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#070b12;color:#f5f7fb;font-family:Arial,Tahoma,sans-serif}
+.hero{padding:24px 5% 45px;background:radial-gradient(circle at 80% 0,#214b8d,transparent 35%),linear-gradient(135deg,#0b1425,#070b12)}
+.top,.heroIn,.wrap{max-width:1400px;margin:auto}.top{display:flex;justify-content:space-between;align-items:center}.logo{font-size:25px;font-weight:900;color:#69a7ff}.badge{border:1px solid #38547a;border-radius:999px;padding:8px 12px;color:#c0cce0}
+.heroIn{text-align:center;margin-top:50px}.hero h1{font-size:clamp(38px,7vw,70px);margin:0 0 10px}.hero p{color:#c1ccdc;line-height:1.9}
+.search{display:flex;gap:9px;margin:24px auto;max-width:950px}.search input{flex:1;background:#101827;border:1px solid #344965;color:white;border-radius:14px;padding:17px;font-size:17px}.search button{background:#3985ff;color:#fff;border:0;border-radius:14px;padding:0 25px;font-weight:900}
+.wrap{padding:30px 5%}.bar{display:flex;justify-content:space-between;align-items:center}.bar h2{font-size:30px}.count{color:#94a5bf}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.filters select,.filters button{background:#111927;color:#fff;border:1px solid #2d405c;border-radius:10px;padding:11px}
+.letters{display:flex;gap:6px;overflow:auto;padding:5px 0 18px}.letters button{background:#111927;color:#b8c6d9;border:1px solid #293b57;border-radius:9px;padding:8px 12px}.letters button.active{background:#3985ff;color:#fff}
+.status{text-align:center;color:#91a1b9;padding:18px}.progress{height:6px;background:#182235;border-radius:99px;overflow:hidden;margin:0 auto 20px;max-width:600px}.progress i{display:block;height:100%;width:0;background:#3985ff;transition:.2s}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:17px}.card{background:#101721;border:1px solid #1d2b40;border-radius:16px;overflow:hidden;cursor:pointer;transition:.2s}.card:hover{transform:translateY(-4px);border-color:#3985ff}
+.poster{width:100%;aspect-ratio:2/3;object-fit:cover;background:#17243a}.info{padding:11px}.title{font-weight:800;line-height:1.45;min-height:43px}.meta{display:flex;justify-content:space-between;gap:8px;color:#899ab2;font-size:12px;margin-top:7px}.price{color:#79b1ff;font-weight:bold}
+.pager{display:flex;justify-content:center;align-items:center;gap:12px;margin:30px}.pager button{background:#111927;color:#fff;border:1px solid #30425e;padding:10px 16px;border-radius:10px}.pager button:disabled{opacity:.35}
+.empty{text-align:center;padding:70px;color:#8797ad}.note{font-size:12px;color:#71839e;text-align:center;margin:10px 0 20px}
+.modal{position:fixed;inset:0;background:#000d;display:none;align-items:center;justify-content:center;padding:15px;z-index:10}.modal.show{display:flex}.box{width:min(900px,100%);max-height:92vh;overflow:auto;background:#101721;border:1px solid #30435f;border-radius:22px;padding:22px}.close{float:left;background:#27364c;color:#fff;border:0;border-radius:9px;padding:9px 13px}.mimg{width:230px;max-height:345px;object-fit:cover;border-radius:14px;float:right;margin-left:22px}.box h2{font-size:30px;margin-top:35px}.box p{line-height:2;color:#c6d0df}.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;clear:both;padding-top:18px}.fact{background:#0b1220;border:1px solid #1e304a;border-radius:10px;padding:10px}.links{clear:both;display:flex;gap:9px;flex-wrap:wrap;padding-top:18px}.links a{color:#fff;text-decoration:none;padding:11px 15px;border-radius:10px;font-weight:bold;background:#e52f50}.links a.alt{background:#294361}.links a.store{background:#2f75df}
+footer{border-top:1px solid #151e2d;text-align:center;color:#687891;padding:35px}
+@media(max-width:600px){.heroIn{margin-top:35px}.grid{grid-template-columns:repeat(2,1fr);gap:10px}.mimg{float:none;width:150px}.facts{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="top"><div class="logo">🎮 PS4 IRAQ</div><div class="badge" id="badge">جاري التحميل...</div></div>
+  <div class="heroIn">
+    <h1>مكتبة ألعاب PS4</h1>
+    <p>كتالوج حقيقي لألعاب PlayStation 4 — ابحث بالاسم وشاهد البوستر والسعر ورابط المتجر والشرح العربي.</p>
+    <div class="search"><input id="q" placeholder="ابحث عن A Way Out أو GTA V أو God of War..." autocomplete="off"><button id="searchBtn">بحث</button></div>
+  </div>
+</section>
+
+<main class="wrap">
+  <div class="bar"><h2>🎮 الألعاب</h2><span class="count" id="count">0 لعبة</span></div>
+  <div class="filters">
+    <select id="type"><option value="">كل أنواع المنتجات</option><option value="Full Game">Full Game</option><option value="Game Bundle">حزمة ألعاب</option><option value="Premium Edition">نسخة فاخرة</option></select>
+    <select id="price"><option value="">كل الأسعار</option><option value="free">مجاني</option><option value="0-10">أقل من $10</option><option value="10-30">$10 — $30</option><option value="30+">أكثر من $30</option></select>
+    <select id="year"><option value="">كل السنوات</option></select>
+    <select id="genre"><option value="">كل الأنواع</option><option>Action</option><option>Adventure</option><option>RPG</option><option>Shooter</option><option>Racing</option><option>Sports</option><option>Horror</option><option>Fighting</option><option>Platform</option><option>Strategy</option></select>
+    <select id="age"><option value="">كل التصنيفات العمرية</option><option>3+</option><option>7+</option><option>12+</option><option>16+</option><option>18+</option><option>غير متوفر</option></select>
+    <button id="reset">إعادة ضبط</button>
+  </div>
+  <div class="note">الكتالوج والصور والأسعار وأنواع المنتجات تأتي من مصدر متجر PlayStation. بيانات السنة/النوع/العمر لا يتم اختلاقها؛ تظهر فقط عندما تكون متوفرة.</div>
+  <div class="letters" id="letters"></div>
+  <div class="progress"><i id="prog"></i></div>
+  <div class="status" id="status">جاري تحميل كتالوج PS4 الحقيقي...</div>
+  <div class="grid" id="grid"></div>
+  <div class="pager" id="pager"></div>
+</main>
+
+<div class="modal" id="modal">
+  <div class="box">
+    <button class="close" id="close">إغلاق</button>
+    <img id="mimg" class="mimg" alt="">
+    <h2 id="mtitle"></h2>
+    <p id="mDesc">جاري جلب الشرح العربي...</p>
+    <div class="facts" id="facts"></div>
+    <div class="links">
+      <a id="yt" target="_blank" rel="noopener">▶ التريلر</a>
+      <a id="wiki" class="alt" target="_blank" rel="noopener">📖 ويكيبيديا</a>
+      <a id="store" class="store" target="_blank" rel="noopener">🛒 متجر PlayStation</a>
+    </div>
+  </div>
+</div>
+
+<footer>PS4 Iraq © 2026 — مكتبة ألعاب PlayStation 4</footer>
+
+<script>
+const RAW="https://raw.githubusercontent.com/Ephellon/game-store-catalog/main/ps4/";
+const LETTERS=["_","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+const PAGE=40;
+let all=[],filtered=[],page=1,letter="",errors=[];
+
+const meta={
+"a way out":{year:2018,genre:"Adventure",age:"18+",desc:"لعبة مغامرات وتعاون لشخصين. يتحكم اللاعبان بليو وفينسنت، سجينين يتعاونان للهروب من السجن ثم مواجهة الشرطة وماضيهما."},
+"grand theft auto v":{year:2013,genre:"Action",age:"18+",desc:"تجري الأحداث في لوس سانتوس، حيث تتقاطع حياة مايكل وفرانكلين وتريفور أثناء تنفيذ عمليات وسرقات كبيرة في عالم مفتوح."},
+"god of war":{year:2018,genre:"Action",age:"18+",desc:"يخوض كريتوس وابنه أتريوس رحلة في العوالم الإسكندنافية، وبين المعارك والأسرار يحاول كريتوس تعليم ابنه النجاة والسيطرة على غضبه."},
+"god of war ragnarok":{year:2022,genre:"Action",age:"18+",desc:"يكمل كريتوس وأتريوس رحلتهما في العوالم الإسكندنافية مع اقتراب راجناروك ومواجهة آلهة ومحاربين وأخطار جديدة."},
+"red dead redemption 2":{year:2018,genre:"Action",age:"18+",desc:"تروي اللعبة قصة آرثر مورغان وعصابة فان دير ليند في نهاية عصر الغرب الأمريكي، وسط مطاردة القانون وصراعات العصابة."},
+"the last of us part ii":{year:2020,genre:"Action",age:"18+",desc:"تدور القصة حول إيلي بعد أحداث الجزء الأول، وتقودها رحلة انتقام قاسية في عالم مدمر مع عواقب إنسانية صعبة."},
+"the last of us remastered":{year:2014,genre:"Action",age:"18+",desc:"يرافق جويل إيلي عبر الولايات المتحدة بعد انتشار وباء دمّر الحضارة، وتتحول الرحلة الخطيرة إلى علاقة إنسانية عميقة."},
+"horizon zero dawn":{year:2017,genre:"RPG",age:"16+",desc:"تلعب دور ألوي، صائدة تعيش في عالم تسيطر عليه آلات ضخمة، وتحاول اكتشاف أصلها وأسرار الحضارة القديمة."},
+"bloodborne":{year:2015,genre:"RPG",age:"18+",desc:"يصل الصياد إلى مدينة يارنام الموبوءة، ويواجه وحوشاً وأسراراً كونية في عالم مظلم شديد الصعوبة."},
+"uncharted 4":{year:2016,genre:"Adventure",age:"16+",desc:"يعود ناثان دريك إلى المغامرة عندما يظهر شقيقه سام، وينطلقان للبحث عن كنز هنري أفري في رحلة مليئة بالألغاز والمطاردات."},
+"spider-man":{year:2018,genre:"Action",age:"16+",desc:"يلعب اللاعب دور بيتر باركر وهو يحمي نيويورك من العصابات والأعداء ويتنقل بين ناطحات السحاب باستخدام الشبكة."},
+"days gone":{year:2019,genre:"Action",age:"18+",desc:"يعيش ديكون سانت جون في عالم اجتاحه وباء حوّل البشر إلى مخلوقات متوحشة، ويبحث عن زوجته وسط عالم خطير."},
+"resident evil 2":{year:2019,genre:"Horror",age:"18+",desc:"يصل ليون وكلير إلى راكون سيتي أثناء تفشي وباء يحول السكان إلى زومبي، ويحاولان النجاة وكشف الحقيقة."},
+"resident evil 4":{year:2023,genre:"Horror",age:"18+",desc:"يُرسل ليون إلى قرية معزولة لإنقاذ ابنة الرئيس الأمريكي، لكنه يكتشف جماعة غامضة ومؤامرة خطيرة."},
+"elden ring":{year:2022,genre:"RPG",age:"16+",desc:"يصل اللاعب إلى الأراضي الوسطى بصفته Tarnished ويخوض رحلة لاستعادة قوة الـElden Ring في عالم مفتوح مليء بالأسرار والزعماء."},
+"the witcher 3":{year:2015,genre:"RPG",age:"18+",desc:"يتقمص اللاعب دور جيرالت، صياد الوحوش، الذي يبحث عن سيري عبر ممالك وحروب وصراعات سياسية ومهام كثيرة."},
+"far cry 5":{year:2018,genre:"Shooter",age:"18+",desc:"يصل اللاعب إلى مقاطعة هوب في مونتانا لمواجهة طائفة مسلحة، ويمكنه تحرير المناطق ومساعدة السكان."},
+"detroit become human":{year:2018,genre:"Adventure",age:"16+",desc:"تدور الأحداث في مستقبل تستخدم فيه أندرويدات شبيهة بالبشر، وتؤثر اختيارات اللاعب في مصير الشخصيات والنهايات."}
+};
+
+const $=id=>document.getElementById(id);
+const norm=s=>String(s||"").toLowerCase().replace(/[®™:.,'’!?-]/g," ").replace(/\s+/g," ").trim();
+function esc(s){return String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+function info(g){
+  const k=norm(g.name);
+  if(meta[k]) return meta[k];
+  for(const x of Object.keys(meta)) if(k.includes(x)||x.includes(k)) return meta[x];
+  return {};
+}
+function priceNum(p){
+  if(p==="Free") return 0;
+  const n=parseFloat(String(p||"").replace(/[^0-9.]/g,""));
+  return Number.isFinite(n)?n:null;
+}
+function matches(g){
+  const q=norm($("q").value);
+  const m=info(g);
+  if(q&&!norm(g.name).includes(q)) return false;
+  if(letter){
+    const c=norm(g.name)[0]||"_";
+    if(letter==="_" && /[a-z]/.test(c)) return false;
+    if(letter!=="_" && c!==letter) return false;
+  }
+  const t=$("type").value;
+  if(t&&g.rating!==t) return false;
+  const p=$("price").value,n=priceNum(g.price);
+  if(p==="free"&&g.price!=="Free") return false;
+  if(p==="0-10"&&(n===null||n>=10)) return false;
+  if(p==="10-30"&&(n===null||n<10||n>30)) return false;
+  if(p==="30+"&&(n===null||n<=30)) return false;
+  if($("year").value&&String(m.year)!==$("year").value) return false;
+  if($("genre").value&&m.genre!==$("genre").value) return false;
+  if($("age").value&&(m.age||"غير متوفر")!==$("age").value) return false;
+  return true;
+}
+function drawLetters(){
+  $("letters").innerHTML='<button class="active" data-l="">الكل</button>'+
+    LETTERS.map(x=>'<button data-l="'+x+'">'+(x==="_"?"#":x.toUpperCase())+"</button>").join("");
+  $("letters").querySelectorAll("button").forEach(b=>b.onclick=()=>{
+    letter=b.dataset.l;$("letters").querySelectorAll("button").forEach(x=>x.classList.remove("active"));b.classList.add("active");apply();
+  });
+}
+function drawYears(){
+  const years=[...new Set(all.map(g=>info(g).year).filter(Boolean))].sort((a,b)=>b-a);
+  $("year").innerHTML='<option value="">كل السنوات</option>'+years.map(y=>"<option>"+y+"</option>").join("");
+}
+function apply(){
+  page=1;filtered=all.filter(matches);
+  $("count").textContent=filtered.length.toLocaleString("ar-IQ")+" لعبة";
+  render();
+}
+function render(){
+  const start=(page-1)*PAGE,items=filtered.slice(start,start+PAGE);
+  $("grid").innerHTML=items.length?items.map((g,i)=>{
+    const m=info(g);
+    return `<article class="card" data-i="${i}">
+      <img class="poster" loading="lazy" src="${esc(g.image||"")}" alt="${esc(g.name)}"
+       onerror="this.style.opacity=.35">
+      <div class="info"><div class="title">${esc(g.name)}</div>
+      <div class="meta"><span>${esc(m.year||"سنة غير متوفرة")}</span><span class="price">${esc(g.price||"غير متوفر")}</span></div></div>
+    </article>`;
+  }).join(""):'<div class="empty">لا توجد نتائج. جرّب اسم لعبة آخر أو اضغط إعادة ضبط.</div>';
+  $("grid").querySelectorAll(".card").forEach(c=>c.onclick=()=>openGame(items[Number(c.dataset.i)]));
+  const pages=Math.ceil(filtered.length/PAGE);
+  $("pager").innerHTML=pages>1?`<button id="prev" ${page===1?"disabled":""}>السابق</button><span>صفحة ${page} من ${pages}</span><button id="next" ${page===pages?"disabled":""}>التالي</button>`:"";
+  if($("prev"))$("prev").onclick=()=>{page--;render();scrollTo(0,450)};
+  if($("next"))$("next").onclick=()=>{page++;render();scrollTo(0,450)};
+}
+async function loadCatalog(){
+  drawLetters();
+  let completed=0;
+  for(let i=0;i<LETTERS.length;i+=4){
+    const batch=LETTERS.slice(i,i+4).map(async l=>{
+      try{
+        const r=await fetch(RAW+encodeURIComponent(l)+".json",{cache:"no-store"});
+        if(!r.ok) throw Error(r.status);
+        const a=await r.json();
+        return a.filter(g=>g&&g.name&&Array.isArray(g.platforms)&&g.platforms.includes("PS4"));
+      }catch(e){errors.push(l);return [];}
+    });
+    const rows=await Promise.all(batch);
+    rows.forEach(a=>all.push(...a));
+    completed+=rows.length;
+    $("prog").style.width=Math.round(completed/LETTERS.length*100)+"%";
+    $("status").textContent="تم تحميل "+all.length.toLocaleString("ar-IQ")+" لعبة...";
+  }
+  const seen=new Set();
+  all=all.filter(g=>{const k=(g.uuid||g.name)+"|"+(g.price||"");if(seen.has(k))return false;seen.add(k);return true;});
+  $("badge").textContent=all.length.toLocaleString("ar-IQ")+" لعبة PS4";
+  $("status").textContent=errors.length?"اكتمل التحميل، لكن تعذر تحميل: "+errors.join(", "):"اكتمل تحميل الكتالوج بدون أخطاء";
+  drawYears();apply();
+}
+async function openGame(g){
+  const m=info(g);
+  $("modal").classList.add("show");
+  $("mimg").src=g.image||"";
+  $("mtitle").textContent=g.name;
+  $("facts").innerHTML=
+    `<div class="fact">💰 السعر: ${esc(g.price||"غير متوفر")}</div>
+     <div class="fact">📦 المنتج: ${esc(g.rating||"لعبة")}</div>
+     <div class="fact">📅 السنة: ${esc(m.year||"غير متوفرة")}</div>
+     <div class="fact">🎭 النوع: ${esc(m.genre||"غير متوفر")}</div>
+     <div class="fact">🔞 العمر: ${esc(m.age||"غير متوفر")}</div>
+     <div class="fact">🎮 المنصة: PS4</div>`;
+  $("yt").href="https://www.youtube.com/results?search_query="+encodeURIComponent(g.name+" PS4 trailer");
+  $("wiki").href="https://ar.wikipedia.org/w/index.php?search="+encodeURIComponent(g.name);
+  $("store").href=g.href||"#";
+  $("mDesc").textContent=m.desc||"جاري البحث عن شرح عربي موثوق...";
+  if(!m.desc){
+    try{
+      const r=await fetch("https://ar.wikipedia.org/api/rest_v1/page/summary/"+encodeURIComponent(g.name));
+      if(r.ok){const d=await r.json();$("mDesc").textContent=d.extract||"لا يوجد شرح عربي متاح لهذه اللعبة حالياً.";}
+      else $("mDesc").textContent="لا يوجد شرح عربي متاح لهذه اللعبة حالياً.";
+    }catch(e){$("mDesc").textContent="تعذر جلب الشرح العربي الآن، لكن رابط ويكيبيديا موجود.";}
+  }
+}
+function closeModal(){$("modal").classList.remove("show");}
+function reset(){
+  $("q").value="";letter="";
+  ["type","price","year","genre","age"].forEach(id=>$(id).value="");
+  $("letters").querySelectorAll("button").forEach(b=>b.classList.toggle("active",b.dataset.l===""));
+  apply();
+}
+$("searchBtn").onclick=apply;
+$("q").onkeydown=e=>{if(e.key==="Enter")apply();};
+["type","price","year","genre","age"].forEach(id=>$(id).onchange=apply);
+$("reset").onclick=reset;$("close").onclick=closeModal;$("modal").onclick=e=>{if(e.target===$("modal"))closeModal();};
+loadCatalog();
+</script>
+</body>
+</html>
