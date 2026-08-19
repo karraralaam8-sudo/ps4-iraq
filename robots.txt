@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://karraralaam8-sudo.github.io/ps4-iraq/sitemap.xml
